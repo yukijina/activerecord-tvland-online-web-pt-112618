@@ -43,7 +43,7 @@ describe Character do
     malcolm = Character.new(:name => "Malcolm Reynolds")
     # We can use the build_xxx method all the way up a chain, 
     # because each one returns an instance of that type of object
-    show = malcolm.build_show(:name => "Firefly")
+    show = malcolm.build_show(:name => "Firefly") # character belongs_to show. belongs_to creates the build_show method
     .build_network(:call_letters => "Fox")
     show = malcolm.show
     expect(show.name).to eq("Firefly")
